@@ -1,0 +1,8 @@
+{
+  "name": "SmartPyme — Gestión para Negocios y Cafés",
+  "description": "Plataforma SaaS integral de gestión comercial para pymes, cafeterías y restaurantes en Panamá: ventas, recetas, inventario, costos, rentabilidad y SmartAI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

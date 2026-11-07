@@ -1,0 +1,1008 @@
+# SMARTPYME — COMPLETE MASTER PROMPT
+## Full Business Management SaaS Platform | Design, Features, Logic & System Architecture
+
+### 1. PROJECT OVERVIEW
+
+Build a complete, functional, modern SaaS web application called **SmartPyme**.
+
+**Brand tagline:** “Tu negocio, bajo control.”
+
+SmartPyme is an all-in-one business management platform designed to help small businesses organize their daily operations, monitor sales, control inventory, calculate product costs, understand profitability, and make better business decisions through artificial intelligence.
+
+The initial target market is small cafés, coffee shops, restaurants, and food businesses in Panama. However, the architecture must allow the platform to expand to other types of small businesses in the future.
+
+This must be a real, functional application, not merely a visual prototype. All buttons, forms, tables, filters, calculations, dashboards, navigation elements, and system interactions must work.
+
+**Project constraints:**
+- Initial development budget: B/.0.
+- Prefer no-code or low-code technologies.
+- No custom programming should be required for the initial implementation whenever possible.
+- The application must be scalable and easy to maintain.
+- The interface must be in Spanish.
+- Currency: USD (B/.).
+- Time zone: America/Panama.
+- Date format: DD/MM/YYYY.
+
+---
+
+# 2. BRAND IDENTITY AND VISUAL DESIGN SYSTEM
+
+Use the uploaded Apple Style Reference as the primary visual direction.
+
+The interface should communicate simplicity, elegance, premium quality, clarity, and technological sophistication.
+
+The design must be inspired by Apple's minimalist product-page language, adapted to a professional SaaS business management application. Do not copy Apple's logo, trademarks, or proprietary assets.
+
+### Color palette
+
+- Main background: #FFFFFF
+- Alternate section background: #F5F5F7
+- Secondary pale background: #FAFAFC
+- Borders and dividers: #D6D6D6
+- Primary text: #1D1D1F
+- Secondary text: #707070
+- Muted text: #86868B
+- Primary interactive blue: #0071E3
+- Link blue: #0066CC
+- Disabled controls: #E6E6E8
+- Warning and low-stock status: use restrained amber/orange.
+- Error status: use restrained red.
+- Success status: use restrained green.
+
+Use blue only for important interactive elements and selected states. Avoid large blue backgrounds.
+
+### Typography
+
+Preferred fonts:
+- SF Pro Display
+- SF Pro Text
+
+Fallback fonts:
+- Inter
+- Helvetica Neue
+- Arial
+
+Typography hierarchy:
+- Main page headlines: 40–56px, semibold.
+- Section headings: 28–40px, semibold.
+- Card headings: 18–22px, semibold.
+- Body text: 15–17px.
+- Supporting text: 12–14px.
+- Navigation labels: 13–14px.
+
+Use clear visual hierarchy, comfortable line spacing, and readable text.
+
+### Layout and spacing
+
+- Use a 4px base spacing system.
+- Generous whitespace.
+- Main section spacing: approximately 64–90px where appropriate.
+- Card padding: approximately 24–28px.
+- Element spacing: approximately 16–20px.
+- Rounded cards and media: 20–28px.
+- Inputs: rounded corners.
+- Buttons: pill-shaped or softly rounded.
+- Navigation: softly rounded active states.
+
+### Visual rules
+
+- No gradients.
+- No excessive shadows.
+- No crowded dashboards.
+- No unnecessary decorative elements.
+- Avoid excessive borders and boxed panels.
+- Use flat surfaces and subtle dividers.
+- Use charts with clean labels and restrained colors.
+- Prioritize readability and usability over decoration.
+- Use consistent icons throughout the application.
+- Use subtle transitions and micro-interactions.
+- Provide excellent responsive behavior on desktop, tablet, and mobile.
+
+The application should feel like a premium, polished business product rather than a generic administrative dashboard.
+
+---
+
+# 3. APPLICATION STRUCTURE AND NAVIGATION
+
+Create a complete application with a clean sidebar navigation.
+
+Main navigation:
+
+1. Dashboard
+2. Ventas
+3. Productos
+4. Inventario
+5. Recetas
+6. Compras y mermas
+7. Costos y rentabilidad
+8. Reportes
+9. SmartAI
+10. Configuración
+
+The sidebar should include:
+- SmartPyme logo and brand name.
+- Navigation icons and labels.
+- Clearly indicated active section.
+- Business name and account profile.
+- Collapsible navigation option on desktop.
+- Mobile navigation menu.
+
+The main content area should use a clean white background, with subtle gray section backgrounds when needed.
+
+Every section must have a consistent page header, title, short description, primary action, and relevant content.
+
+---
+
+# 4. USER AUTHENTICATION AND BUSINESS MANAGEMENT
+
+Create a functional authentication system.
+
+Required features:
+- User registration.
+- Login.
+- Logout.
+- Password recovery.
+- User profile.
+- Business profile.
+- Business name and logo.
+- Business type.
+- Contact information.
+- Currency and regional settings.
+- Account preferences.
+
+### Roles and permissions
+
+Include at least two roles:
+
+**Administrator**
+- Full access.
+- Manage products and ingredients.
+- Register sales and purchases.
+- Modify recipes and prices.
+- View financial reports.
+- Manage users and permissions.
+
+**Employee**
+- Register sales.
+- View permitted product and inventory information.
+- Register authorized movements.
+- No access to sensitive financial settings unless granted.
+
+### Multi-business architecture
+
+Prepare the system for multiple businesses.
+
+Each business must have its own:
+- Products.
+- Ingredients.
+- Inventory.
+- Sales.
+- Recipes.
+- Purchases.
+- Reports.
+- Users and permissions.
+
+One business must never be able to access another business's information.
+
+---
+
+# 5. DASHBOARD
+
+Create an advanced, interactive dashboard that provides a complete overview of business performance.
+
+### Main KPI cards
+
+Display:
+
+1. Sales today.
+2. Sales this week.
+3. Sales this month.
+4. Number of products sold.
+5. Total recipe costs.
+6. Gross profit.
+7. Gross profit margin.
+8. Current inventory value.
+9. Number of products with low stock.
+10. Number of recorded waste movements.
+
+Each KPI must calculate its value from actual database records.
+
+Include comparison indicators against the previous equivalent period when enough historical data exists.
+
+### Charts and visualizations
+
+Include:
+
+- Sales over time.
+- Sales by product.
+- Sales by category.
+- Gross profit over time.
+- Most profitable products.
+- Best-selling products.
+- Lowest-selling products.
+- Inventory distribution.
+- Ingredient consumption.
+- Waste and inventory losses.
+
+Charts must respond to date filters.
+
+### Dashboard filters
+
+Allow users to select:
+- Today.
+- Yesterday.
+- Last 7 days.
+- Last 30 days.
+- This month.
+- Previous month.
+- Custom date range.
+
+All KPI cards and charts must update when filters change.
+
+### Alerts
+
+Display useful alerts:
+- Ingredients below minimum stock.
+- Ingredients out of stock.
+- Products with low profitability.
+- Unusual ingredient consumption.
+- High waste levels.
+- Products with declining sales.
+
+Do not generate alerts based on fabricated information.
+
+---
+
+# 6. PRODUCT MANAGEMENT
+
+Create a complete product management module.
+
+Each product must include:
+
+- Product SKU.
+- Product name.
+- Category.
+- Description.
+- Selling price.
+- Associated recipe.
+- Product image (optional).
+- Status: active or inactive.
+- Creation date.
+- Last modification date.
+
+### Functions
+
+- Create products.
+- Edit products.
+- Delete or deactivate products.
+- Search products.
+- Filter by category and status.
+- View product details.
+- View sales history.
+- View recipe cost.
+- View gross profit per unit.
+- View gross profit margin.
+- View total units sold.
+
+### Product example data
+
+Include the following fictional initial products:
+
+| SKU | Product | Selling price |
+|---|---|---:|
+| P001 | Café americano | B/.2.00 |
+| P002 | Capuchino | B/.3.00 |
+| P003 | Chocolate caliente | B/.2.75 |
+
+These are demonstration records and must be editable.
+
+---
+
+# 7. INVENTORY MANAGEMENT
+
+Create an ingredient and raw-material inventory system.
+
+Each ingredient must contain:
+
+- Ingredient SKU.
+- Ingredient name.
+- Category.
+- Measurement unit.
+- Current stock.
+- Minimum stock.
+- Unit purchase cost.
+- Supplier (optional).
+- Last update date.
+- Active/inactive status.
+
+### Inventory functions
+
+- Add ingredients.
+- Edit ingredients.
+- Deactivate ingredients.
+- Search and filter ingredients.
+- View current stock.
+- View minimum stock.
+- View stock value.
+- View inventory movements.
+- View purchase history.
+- View waste history.
+- View ingredient consumption.
+- Receive low-stock notifications.
+
+### Automatic stock calculations
+
+The system must calculate inventory using the following logic:
+
+Current stock = Initial stock + Purchases - Recipe consumption - Waste + Adjustments.
+
+All movements must be recorded in an inventory history.
+
+Never modify stock silently. Every movement must have a corresponding transaction record.
+
+### Initial demonstration ingredients
+
+| SKU | Ingredient | Unit |
+|---|---|---|
+| I001 | Café en grano | g |
+| I002 | Leche entera | ml |
+| I003 | Azúcar | g |
+| I004 | Vaso desechable | unidad |
+| I005 | Tapa | unidad |
+| I006 | Chocolate en polvo | g |
+
+---
+
+# 8. RECIPE MANAGEMENT
+
+Create a recipe management module that connects products with their ingredients.
+
+Each recipe must contain:
+
+- Recipe ID.
+- Associated product.
+- Ingredient list.
+- Quantity of each ingredient.
+- Measurement unit.
+- Unit ingredient cost.
+- Total ingredient cost.
+- Last modification date.
+- Recipe version/history.
+
+### Recipe functions
+
+- Create recipes.
+- Edit recipes.
+- Add or remove ingredients.
+- Change ingredient quantities.
+- Automatically calculate recipe costs.
+- View ingredient cost breakdown.
+- Compare recipe costs.
+- View historical recipe versions.
+
+### Example: Cappuccino recipe
+
+| Ingredient | Quantity |
+|---|---:|
+| Café en grano | 18 g |
+| Leche entera | 180 ml |
+| Azúcar | 5 g |
+| Vaso desechable | 1 unit |
+| Tapa | 1 unit |
+
+The system must calculate the cost of each ingredient and the total recipe cost automatically.
+
+### Critical recipe and inventory logic
+
+Whenever a product is sold:
+1. Identify its associated recipe.
+2. Read the ingredient quantities required.
+3. Multiply those quantities by the number of products sold.
+4. Deduct the corresponding quantities from inventory.
+5. Record the consumption as an inventory movement.
+6. Update the available stock.
+7. Update the product's current recipe cost.
+8. Update profitability calculations.
+
+Prevent duplicate deductions.
+
+**Important:** If a sale already deducts recipe ingredients automatically, users must not register the same consumption again as waste or manual stock output.
+
+### Recipe history
+
+When a recipe changes, historical sales must retain the recipe cost that applied at the time of the sale.
+
+Do not recalculate old sales using a new recipe.
+
+---
+
+# 9. SALES MANAGEMENT
+
+Create a sales recording and tracking module.
+
+This is an administrative sales management tool, not a full point-of-sale payment system.
+
+Each sale must include:
+
+- Sale ID.
+- Date and time.
+- Product SKU.
+- Product name.
+- Quantity sold.
+- Selling price per unit.
+- Total sale.
+- Recipe cost per unit at the time of sale.
+- Total recipe cost.
+- Gross profit.
+- Notes (optional).
+- User who registered the sale.
+
+### Sales functions
+
+- Register a sale.
+- Edit or cancel a sale with appropriate permissions.
+- Search sales.
+- Filter by date.
+- Filter by product.
+- View sales details.
+- View sales history.
+- Export sales records.
+- Calculate totals automatically.
+
+### Automatic calculations
+
+Total sale = Quantity sold × Selling price per unit.
+
+Total recipe cost = Quantity sold × Recipe cost per unit.
+
+Gross profit = Total sale - Total recipe cost.
+
+### Stock validation
+
+Before confirming a sale:
+- Verify ingredient availability.
+- Calculate the required quantities.
+- Warn the user if stock is insufficient.
+- Prevent negative inventory unless an administrator explicitly authorizes the transaction.
+- Show the ingredients that would be insufficient.
+
+### Important
+
+Sales must automatically trigger recipe ingredient consumption exactly once.
+
+If a sale is edited or canceled, the system must correctly reverse or recalculate the related inventory movements.
+
+Maintain an auditable transaction history.
+
+---
+
+# 10. PURCHASES, WASTE AND INVENTORY ADJUSTMENTS
+
+Create a module for managing inventory movements.
+
+Movement types:
+
+**COMPRA**
+- Increases ingredient stock.
+- Records supplier purchases.
+
+**MERMA**
+- Decreases ingredient stock.
+- Records damaged, expired, spilled, or wasted ingredients.
+
+**AJUSTE**
+- Corrects inventory differences.
+- Can increase or decrease stock.
+- Requires a reason and administrator authorization when appropriate.
+
+### Movement fields
+
+- Movement ID.
+- Date and time.
+- Ingredient.
+- Movement type.
+- Reason.
+- Quantity.
+- Unit cost.
+- Total cost.
+- Supplier or reference number.
+- Notes.
+- User who registered the movement.
+
+### Reasons for waste and adjustments
+
+Include:
+- Producto dañado.
+- Producto vencido.
+- Derrame o desperdicio.
+- Diferencia de inventario.
+- Corrección de registro.
+- Otro.
+
+### Functions
+
+- Register purchases.
+- Register waste.
+- Register adjustments.
+- View movement history.
+- Filter by ingredient, type, and date.
+- Calculate total purchase costs.
+- Calculate total waste costs.
+- Export movement reports.
+
+All inventory movements must update stock automatically.
+
+---
+
+# 11. COSTS AND PROFITABILITY
+
+Create a dedicated financial analysis module.
+
+The system must distinguish between ingredient costs, gross profit, and net profit.
+
+### Product-level calculations
+
+For each product, display:
+
+- Selling price.
+- Recipe cost per unit.
+- Gross profit per unit.
+- Gross profit margin.
+- Total units sold.
+- Total sales.
+- Total recipe costs.
+- Total gross profit.
+
+### Formulas
+
+Gross profit per unit = Selling price - Recipe cost per unit.
+
+Gross profit margin = (Gross profit per unit / Selling price) × 100.
+
+Total gross profit = Total sales - Total recipe costs.
+
+### Comparisons
+
+Include:
+- Most profitable products.
+- Lowest-margin products.
+- Highest recipe costs.
+- Products with increasing costs.
+- Products with declining margins.
+- Product profitability comparisons.
+
+### Cost limitations
+
+The system's initial gross profit calculation must include recipe ingredient costs only.
+
+It must not incorrectly label gross profit as net profit.
+
+Labor, rent, utilities, taxes, payment commissions, and other operating expenses are not included unless an additional operating-expense module is implemented.
+
+Clearly explain this distinction in the interface.
+
+---
+
+# 12. SMARTAI — ARTIFICIAL INTELLIGENCE ASSISTANT
+
+Create a dedicated AI assistant called **SmartAI**.
+
+SmartAI should analyze actual business data and provide understandable recommendations.
+
+Its interface should resemble a modern conversational AI assistant.
+
+### SmartAI capabilities
+
+1. Analyze sales performance.
+2. Identify best-selling products.
+3. Identify low-selling products.
+4. Detect products with low gross profit margins.
+5. Identify ingredients with low stock.
+6. Estimate ingredient replenishment needs.
+7. Analyze ingredient consumption.
+8. Identify unusual waste levels.
+9. Compare weekly and monthly performance.
+10. Generate business summaries.
+11. Suggest possible selling-price adjustments.
+12. Identify opportunities to reduce recipe costs.
+13. Highlight trends in sales and profitability.
+14. Answer questions about business performance.
+
+### Example questions
+
+- ¿Cuál fue mi producto más vendido esta semana?
+- ¿Qué ingredientes debo comprar próximamente?
+- ¿Qué producto tiene menor margen de utilidad?
+- ¿Cuánto vendí este mes?
+- ¿Qué ingredientes tienen mayor desperdicio?
+- ¿Cómo puedo mejorar la rentabilidad del capuchino?
+- ¿Qué productos están vendiendo menos?
+
+### AI response requirements
+
+- Use actual database records.
+- Never invent sales, costs, inventory levels, or financial results.
+- Clearly identify estimates and assumptions.
+- Explain how recommendations were calculated.
+- If data is insufficient, say so.
+- Never change prices, inventory, recipes, or purchases without explicit user approval.
+- Never make purchases automatically.
+- Treat AI recommendations as suggestions, not guaranteed outcomes.
+
+### SmartAI interface
+
+Include:
+- Chat input.
+- Send button.
+- Suggested questions.
+- Conversation history.
+- Clear response formatting.
+- Relevant KPI references when available.
+- Loading and error states.
+
+If a real AI integration is unavailable, build the interface and clearly indicate which capabilities require an AI connection. Do not simulate real AI functionality as if it were connected.
+
+---
+
+# 13. REPORTS AND EXPORTS
+
+Create a reporting module with downloadable reports.
+
+Required reports:
+
+1. Daily sales report.
+2. Weekly sales report.
+3. Monthly sales report.
+4. Product performance report.
+5. Inventory status report.
+6. Inventory movement report.
+7. Purchase report.
+8. Waste report.
+9. Recipe cost report.
+10. Product profitability report.
+11. Gross profit report.
+12. Low-stock report.
+
+### Report functions
+
+- Select date ranges.
+- Filter by product.
+- Filter by ingredient.
+- Filter by category.
+- View summaries and detailed tables.
+- Export to Excel.
+- Export to PDF.
+- Print reports.
+
+Reports must use real system data and reflect the selected filters.
+
+---
+
+# 14. SETTINGS AND CONFIGURATION
+
+Create a settings section with:
+
+### Business settings
+- Business name.
+- Logo.
+- Business type.
+- Address.
+- Contact information.
+- Currency.
+- Time zone.
+
+### User settings
+- Profile information.
+- Password changes.
+- User roles.
+- Access permissions.
+
+### Inventory settings
+- Measurement units.
+- Minimum stock defaults.
+- Inventory alerts.
+- Stock validation preferences.
+
+### Sales settings
+- Default sales preferences.
+- Sales history.
+- Authorization for cancellations and corrections.
+
+### Regional settings
+- Language: Spanish.
+- Currency: USD / B/.
+- Time zone: America/Panama.
+- Date format: DD/MM/YYYY.
+
+The system must not claim to issue official Panamanian fiscal invoices unless a compliant integration is separately implemented.
+
+---
+
+# 15. DATABASE AND SYSTEM ARCHITECTURE
+
+Create a centralized, structured database.
+
+Recommended entities and relationships:
+
+**Businesses**
+- Business ID.
+- Name.
+- Business type.
+- Currency.
+- Time zone.
+- Contact details.
+
+**Users**
+- User ID.
+- Business ID.
+- Name.
+- Email.
+- Role.
+- Permissions.
+
+**Products**
+- Product ID.
+- Business ID.
+- SKU.
+- Name.
+- Category.
+- Selling price.
+- Status.
+
+**Ingredients**
+- Ingredient ID.
+- Business ID.
+- SKU.
+- Name.
+- Unit.
+- Current stock.
+- Minimum stock.
+- Unit cost.
+
+**Recipes**
+- Recipe ID.
+- Product ID.
+- Version.
+- Creation date.
+- Status.
+
+**Recipe details**
+- Recipe detail ID.
+- Recipe ID.
+- Ingredient ID.
+- Quantity.
+- Unit.
+- Unit cost snapshot.
+
+**Sales**
+- Sale ID.
+- Business ID.
+- Date.
+- User ID.
+- Total.
+- Status.
+
+**Sale details**
+- Sale detail ID.
+- Sale ID.
+- Product ID.
+- Quantity.
+- Unit selling price snapshot.
+- Recipe cost snapshot.
+- Gross profit.
+
+**Inventory movements**
+- Movement ID.
+- Business ID.
+- Ingredient ID.
+- Movement type.
+- Quantity.
+- Unit cost.
+- Reference.
+- Date.
+- User ID.
+
+**Purchases and waste**
+- Transaction ID.
+- Movement ID.
+- Reason.
+- Supplier/reference.
+- Notes.
+
+Maintain historical snapshots for prices and costs so that changes do not alter past transactions.
+
+Use database relationships, validation rules, and access controls to preserve data integrity.
+
+---
+
+# 16. AUTOMATIONS AND BUSINESS RULES
+
+Implement the following system automations:
+
+1. A confirmed sale automatically deducts recipe ingredients.
+2. A canceled sale reverses its inventory consumption.
+3. A purchase increases ingredient stock.
+4. A waste record decreases ingredient stock.
+5. An adjustment corrects inventory stock.
+6. A recipe modification updates future recipe costs.
+7. Historical sales preserve their original costs.
+8. Low-stock alerts appear when stock reaches or falls below minimum stock.
+9. Dashboard KPIs update after relevant transactions.
+10. Profitability reports update after sales and cost changes.
+11. All important changes are recorded in an audit history.
+12. Prevent duplicate transaction processing.
+
+Transactions must be handled safely: if a sale cannot complete its required inventory movements, do not leave the sale and stock in inconsistent states.
+
+---
+
+# 17. INITIAL DEMONSTRATION DATA
+
+Include the following fictional sample data to demonstrate the platform.
+
+### Products
+
+- Café americano — B/.2.00.
+- Capuchino — B/.3.00.
+- Chocolate caliente — B/.2.75.
+
+### Ingredients
+
+- Café en grano — grams.
+- Leche entera — milliliters.
+- Azúcar — grams.
+- Vaso desechable — units.
+- Tapa — units.
+- Chocolate en polvo — grams.
+
+### Recipe example
+
+Capuchino:
+- 18 g café en grano.
+- 180 ml leche entera.
+- 5 g azúcar.
+- 1 vaso desechable.
+- 1 tapa.
+
+Make all demonstration records editable and clearly identify them as sample data.
+
+---
+
+# 18. USER EXPERIENCE AND INTERACTION REQUIREMENTS
+
+Every module must have a complete user experience.
+
+Include:
+- Functional buttons.
+- Working navigation.
+- Search and filters.
+- Forms with validation.
+- Confirmation dialogs for important actions.
+- Success and error notifications.
+- Empty states when no records exist.
+- Loading states.
+- Helpful tooltips.
+- Responsive tables.
+- Clear labels and field descriptions.
+- Consistent formatting of currency and quantities.
+
+Never include buttons that do nothing.
+
+Do not display fake data as actual business information.
+
+If a feature is not connected to a real database or integration, clearly identify it as unavailable or requiring configuration.
+
+---
+
+# 19. SECURITY, PRIVACY AND RELIABILITY
+
+Implement:
+- Secure authentication.
+- Role-based access.
+- Business-level data separation.
+- Input validation.
+- Audit logs.
+- Backup strategy.
+- Protection against accidental deletion.
+- Confirmation for sensitive actions.
+- Appropriate database permissions.
+
+Collect only information necessary for the operation of the business.
+
+Do not require customer personal information for the initial MVP.
+
+---
+
+# 20. RESPONSIVE DESIGN
+
+The application must work properly on:
+
+- Desktop computers.
+- Laptops.
+- Tablets.
+- Mobile phones.
+
+On mobile:
+- Use a compact navigation menu.
+- Make forms easy to complete.
+- Keep KPI cards readable.
+- Use responsive tables or mobile-friendly list layouts.
+- Make primary actions easy to access.
+
+Maintain the same Apple-inspired visual identity across all screen sizes.
+
+---
+
+# 21. DEVELOPMENT PRIORITIES
+
+Build the platform in functional stages, while maintaining the complete architecture.
+
+### Phase 1 — Core MVP
+- Authentication.
+- Business profile.
+- Dashboard.
+- Product management.
+- Ingredient inventory.
+- Sales registration.
+- Automatic inventory deduction.
+- Basic reports.
+
+### Phase 2 — Recipe and financial management
+- Recipe management.
+- Recipe costing.
+- Historical cost snapshots.
+- Gross profit per product.
+- Purchases and waste.
+- Advanced profitability dashboard.
+
+### Phase 3 — SmartAI and advanced reporting
+- AI assistant integration.
+- Business recommendations.
+- Sales trend analysis.
+- Inventory forecasts.
+- Advanced reports.
+- Excel and PDF exports.
+
+### Phase 4 — Scalability
+- Multiple businesses.
+- Additional user roles.
+- Integration capabilities.
+- Additional business categories.
+- More advanced analytics.
+
+---
+
+# 22. FINAL ACCEPTANCE CRITERIA
+
+The finished SmartPyme application must satisfy the following conditions:
+
+1. A user can register and access a business account.
+2. An administrator can create and manage products.
+3. An administrator can create and manage ingredients.
+4. Users can create recipes linked to products.
+5. Recipe costs calculate automatically.
+6. Users can register sales.
+7. Sales automatically deduct the correct ingredient quantities.
+8. Inventory movements are recorded and auditable.
+9. Purchases, waste, and adjustments update inventory correctly.
+10. The system calculates gross profit per product.
+11. The dashboard displays real, updated business metrics.
+12. Users can filter and export reports.
+13. Low-stock alerts work.
+14. Historical sales preserve their original recipe costs.
+15. SmartAI uses actual data when connected.
+16. User permissions and business data separation work.
+17. The application is responsive on desktop and mobile.
+18. All interface elements follow the specified Apple-inspired design system.
+
+**FINAL INSTRUCTION:**
+
+Build SmartPyme as a complete, professional, scalable, and functional SaaS business management platform.
+
+Prioritize correct business logic, reliable inventory calculations, historical financial accuracy, and ease of use.
+
+The visual experience must follow the minimalist Apple-inspired design system described above, while the functionality must cover every module and requirement in this prompt.
+
+Do not deliver only a landing page or static dashboard. Deliver a working application with connected screens, real data operations, functional calculations, and a clear path to integrating no-code tools and AI services.
+
+The final product should look and feel like a premium SaaS platform that a real small business in Panama could use every day.
