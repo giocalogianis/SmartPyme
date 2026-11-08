@@ -9,6 +9,7 @@ import {
   Settings,
   ChevronRight,
   Store,
+  LogOut,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -17,7 +18,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
-  const { activeTab, setActiveTab, business, currentUser, alerts } = useApp();
+  const { activeTab, setActiveTab, business, currentUser, alerts, logoutSession } = useApp();
 
   // Simplified to 6 essential, non-redundant sections
   const navItems = [
@@ -111,19 +112,31 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, setIsMobileOpen 
           })}
         </nav>
 
-        {/* Minimal User indicator */}
-        <div className="p-4 border-t border-[#E5E5EA]/70">
-          <div className="flex items-center justify-between text-xs text-[#707070]">
+        {/* Minimal User indicator & Switch Profile trigger */}
+        <div className="p-3 border-t border-[#E5E5EA]/70">
+          <button
+            onClick={() => {
+              setIsMobileOpen(false);
+              logoutSession();
+            }}
+            title="Cambiar de perfil / Cerrar turno"
+            className="w-full flex items-center justify-between p-2 rounded-xl hover:bg-black/[0.04] transition-colors group text-left"
+          >
             <div className="flex items-center gap-2 truncate">
-              <div className="w-6 h-6 rounded-full bg-[#E5E5EA] flex items-center justify-center font-medium text-[10px] text-[#1D1D1F] shrink-0">
+              <div className="w-7 h-7 rounded-full bg-[#E5E5EA] group-hover:bg-[#0071E3] group-hover:text-white transition-colors flex items-center justify-center font-semibold text-xs text-[#1D1D1F] shrink-0">
                 {currentUser.name[0]}
               </div>
-              <span className="truncate font-medium text-[#1D1D1F]">{currentUser.name}</span>
+              <div className="truncate">
+                <p className="truncate font-semibold text-xs text-[#1D1D1F] group-hover:text-[#0071E3] transition-colors">
+                  {currentUser.name}
+                </p>
+                <p className="text-[10px] text-[#86868B]">
+                  {currentUser.role === 'admin' ? 'Administrador' : 'Empleado'}
+                </p>
+              </div>
             </div>
-            <span className="text-[10px] text-[#86868B] uppercase font-semibold">
-              {currentUser.role === 'admin' ? 'Admin' : 'Empleado'}
-            </span>
-          </div>
+            <LogOut className="w-3.5 h-3.5 text-[#86868B] group-hover:text-[#FF3B30] transition-colors shrink-0" />
+          </button>
         </div>
       </aside>
     </>

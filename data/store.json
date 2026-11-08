@@ -1,3 +1,781 @@
 {
-  "test": 123
+  "business": {
+    "id": "biz_01",
+    "name": "Café Boquete Specialty",
+    "type": "Cafetería & Panadería",
+    "currency": "USD",
+    "currencySymbol": "B/.",
+    "timeZone": "America/Panama",
+    "address": "Calle 4ta y Av. Central, Casco Antiguo, Ciudad de Panamá",
+    "phone": "+507 265-8840",
+    "email": "contacto@cafeboquete.pa",
+    "ruc": "1556892-1-845230",
+    "dv": "42"
+  },
+  "users": [
+    {
+      "id": "usr_01",
+      "businessId": "biz_01",
+      "name": "Carlos Mendoza",
+      "email": "carlos@cafeboquete.pa",
+      "role": "admin",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "usr_02",
+      "businessId": "biz_01",
+      "name": "Valeria Guardia",
+      "email": "valeria@cafeboquete.pa",
+      "role": "employee",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80"
+    }
+  ],
+  "currentUserId": "usr_01",
+  "products": [
+    {
+      "id": "prod_01",
+      "businessId": "biz_01",
+      "sku": "P001",
+      "name": "Café americano",
+      "category": "Cafetería clásica",
+      "description": "Extracción doble de espresso diluido en agua caliente filtrada.",
+      "sellingPrice": 2,
+      "status": "active",
+      "createdAt": "2026-10-08T02:00:33.800Z",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "prod_02",
+      "businessId": "biz_01",
+      "sku": "P002",
+      "name": "Capuchino",
+      "category": "Cafetería con leche",
+      "description": "Espresso intenso con microespuma de leche entera aterciopelada.",
+      "sellingPrice": 3,
+      "status": "active",
+      "createdAt": "2026-10-08T02:00:33.800Z",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "prod_03",
+      "businessId": "biz_01",
+      "sku": "P003",
+      "name": "Chocolate caliente",
+      "category": "Bebidas calientes",
+      "description": "Cacao orgánico panameño al 70% emulsionado con leche entera cremosa.",
+      "sellingPrice": 2.75,
+      "status": "active",
+      "createdAt": "2026-10-08T02:00:33.800Z",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "prod_04",
+      "businessId": "biz_01",
+      "sku": "P004",
+      "name": "Croissant artesanal de mantequilla",
+      "category": "Panadería y repostería",
+      "description": "Croissant hojaldrado francés preparado diariamente con mantequilla pura.",
+      "sellingPrice": 2.5,
+      "status": "active",
+      "createdAt": "2026-10-08T02:00:33.800Z",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "prod_05",
+      "businessId": "biz_01",
+      "sku": "P005",
+      "name": "Espresso doble",
+      "category": "Cafetería clásica",
+      "description": "Shot doble (60ml) de café de especialidad de altura boqueteño.",
+      "sellingPrice": 1.75,
+      "status": "active",
+      "createdAt": "2026-10-08T02:00:33.800Z",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "ing_01",
+      "businessId": "biz_01",
+      "sku": "I001",
+      "name": "Café en grano (Geisha & Typica)",
+      "category": "Granos y café",
+      "unit": "g",
+      "currentStock": 3450,
+      "minStock": 1000,
+      "unitCost": 0.025,
+      "supplier": "Finca Lerida Boquete",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "ing_02",
+      "businessId": "biz_01",
+      "sku": "I002",
+      "name": "Leche entera pasteurizada",
+      "category": "Lácteos",
+      "unit": "ml",
+      "currentStock": 14200,
+      "minStock": 5000,
+      "unitCost": 0.0018,
+      "supplier": "Estrella Azul Panamá",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "ing_03",
+      "businessId": "biz_01",
+      "sku": "I003",
+      "name": "Azúcar refinada",
+      "category": "Endulzantes",
+      "unit": "g",
+      "currentStock": 4800,
+      "minStock": 1500,
+      "unitCost": 0.0014,
+      "supplier": "Ingenio Santa Rosa",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "ing_04",
+      "businessId": "biz_01",
+      "sku": "I004",
+      "name": "Vaso térmico compostable 12oz",
+      "category": "Empaque y descartables",
+      "unit": "unidad",
+      "currentStock": 185,
+      "minStock": 200,
+      "unitCost": 0.12,
+      "supplier": "EcoEmpaques Panamá",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "ing_05",
+      "businessId": "biz_01",
+      "sku": "I005",
+      "name": "Tapa para vaso 12oz",
+      "category": "Empaque y descartables",
+      "unit": "unidad",
+      "currentStock": 220,
+      "minStock": 150,
+      "unitCost": 0.05,
+      "supplier": "EcoEmpaques Panamá",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "ing_06",
+      "businessId": "biz_01",
+      "sku": "I006",
+      "name": "Chocolate en polvo 70% Cacao Bocas",
+      "category": "Chocolatería",
+      "unit": "g",
+      "currentStock": 820,
+      "minStock": 1000,
+      "unitCost": 0.035,
+      "supplier": "Cacao Artesanal Bocas del Toro",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "ing_07",
+      "businessId": "biz_01",
+      "sku": "I007",
+      "name": "Harina de trigo repostera",
+      "category": "Panadería",
+      "unit": "g",
+      "currentStock": 6500,
+      "minStock": 2000,
+      "unitCost": 0.0019,
+      "supplier": "Harinas de Panamá S.A.",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    },
+    {
+      "id": "ing_08",
+      "businessId": "biz_01",
+      "sku": "I008",
+      "name": "Mantequilla nacional pura",
+      "category": "Lácteos",
+      "unit": "g",
+      "currentStock": 1800,
+      "minStock": 800,
+      "unitCost": 0.012,
+      "supplier": "Productos Lácteos San Antonio",
+      "status": "active",
+      "updatedAt": "2026-11-07T02:00:33.800Z"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "rec_01",
+      "businessId": "biz_01",
+      "productId": "prod_01",
+      "name": "Receta estándar Café Americano 12oz",
+      "version": 1,
+      "notes": "Ratio 1:11 con agua filtrada a 92°C",
+      "status": "active",
+      "updatedAt": "2026-10-13T02:00:33.800Z",
+      "items": [
+        {
+          "ingredientId": "ing_01",
+          "quantity": 18
+        },
+        {
+          "ingredientId": "ing_03",
+          "quantity": 5
+        },
+        {
+          "ingredientId": "ing_04",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing_05",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "rec_02",
+      "businessId": "biz_01",
+      "productId": "prod_02",
+      "name": "Receta oficial Capuchino 12oz",
+      "version": 1,
+      "notes": "Texturizado a 65°C con espresso doble",
+      "status": "active",
+      "updatedAt": "2026-10-13T02:00:33.800Z",
+      "items": [
+        {
+          "ingredientId": "ing_01",
+          "quantity": 18
+        },
+        {
+          "ingredientId": "ing_02",
+          "quantity": 180
+        },
+        {
+          "ingredientId": "ing_03",
+          "quantity": 5
+        },
+        {
+          "ingredientId": "ing_04",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing_05",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "rec_03",
+      "businessId": "biz_01",
+      "productId": "prod_03",
+      "name": "Receta artesanal Chocolate 12oz",
+      "version": 1,
+      "notes": "Cacao orgánico con leche al vapor",
+      "status": "active",
+      "updatedAt": "2026-10-13T02:00:33.800Z",
+      "items": [
+        {
+          "ingredientId": "ing_06",
+          "quantity": 35
+        },
+        {
+          "ingredientId": "ing_02",
+          "quantity": 200
+        },
+        {
+          "ingredientId": "ing_03",
+          "quantity": 8
+        },
+        {
+          "ingredientId": "ing_04",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing_05",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "rec_04",
+      "businessId": "biz_01",
+      "productId": "prod_04",
+      "name": "Receta Croissant Tradicional Hojaldrado",
+      "version": 1,
+      "notes": "Horneado matutino en tandas de 12 unidades",
+      "status": "active",
+      "updatedAt": "2026-10-13T02:00:33.800Z",
+      "items": [
+        {
+          "ingredientId": "ing_07",
+          "quantity": 80
+        },
+        {
+          "ingredientId": "ing_08",
+          "quantity": 45
+        },
+        {
+          "ingredientId": "ing_03",
+          "quantity": 10
+        }
+      ]
+    },
+    {
+      "id": "rec_05",
+      "businessId": "biz_01",
+      "productId": "prod_05",
+      "name": "Receta Espresso Doble Especialidad",
+      "version": 1,
+      "notes": "28 segundos de extracción, 36g líquido final",
+      "status": "active",
+      "updatedAt": "2026-10-13T02:00:33.800Z",
+      "items": [
+        {
+          "ingredientId": "ing_01",
+          "quantity": 18
+        },
+        {
+          "ingredientId": "ing_04",
+          "quantity": 1
+        },
+        {
+          "ingredientId": "ing_05",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "sales": [
+    {
+      "id": "sale_101",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00101",
+      "date": "2026-11-07T01:00:33.800Z",
+      "userId": "usr_02",
+      "userName": "Valeria Guardia",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_02",
+          "productName": "Capuchino",
+          "productSku": "P002",
+          "quantity": 2,
+          "unitSellingPrice": 3,
+          "unitRecipeCostSnapshot": 0.95,
+          "total": 6,
+          "totalRecipeCost": 1.9,
+          "grossProfit": 4.1
+        },
+        {
+          "productId": "prod_04",
+          "productName": "Croissant artesanal de mantequilla",
+          "productSku": "P004",
+          "quantity": 1,
+          "unitSellingPrice": 2.5,
+          "unitRecipeCostSnapshot": 0.71,
+          "total": 2.5,
+          "totalRecipeCost": 0.71,
+          "grossProfit": 1.79
+        }
+      ],
+      "totalQuantity": 3,
+      "totalSale": 8.5,
+      "totalRecipeCost": 2.61,
+      "grossProfit": 5.89,
+      "grossProfitMargin": 69.3,
+      "notes": "Pago en mesa 4"
+    },
+    {
+      "id": "sale_102",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00102",
+      "date": "2026-11-06T23:00:33.800Z",
+      "userId": "usr_02",
+      "userName": "Valeria Guardia",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_01",
+          "productName": "Café americano",
+          "productSku": "P001",
+          "quantity": 3,
+          "unitSellingPrice": 2,
+          "unitRecipeCostSnapshot": 0.63,
+          "total": 6,
+          "totalRecipeCost": 1.89,
+          "grossProfit": 4.11
+        },
+        {
+          "productId": "prod_03",
+          "productName": "Chocolate caliente",
+          "productSku": "P003",
+          "quantity": 1,
+          "unitSellingPrice": 2.75,
+          "unitRecipeCostSnapshot": 1.77,
+          "total": 2.75,
+          "totalRecipeCost": 1.77,
+          "grossProfit": 0.98
+        }
+      ],
+      "totalQuantity": 4,
+      "totalSale": 8.75,
+      "totalRecipeCost": 3.66,
+      "grossProfit": 5.09,
+      "grossProfitMargin": 58.2,
+      "notes": "Para llevar"
+    },
+    {
+      "id": "sale_103",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00103",
+      "date": "2026-11-06T21:00:33.800Z",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_02",
+          "productName": "Capuchino",
+          "productSku": "P002",
+          "quantity": 4,
+          "unitSellingPrice": 3,
+          "unitRecipeCostSnapshot": 0.95,
+          "total": 12,
+          "totalRecipeCost": 3.8,
+          "grossProfit": 8.2
+        }
+      ],
+      "totalQuantity": 4,
+      "totalSale": 12,
+      "totalRecipeCost": 3.8,
+      "grossProfit": 8.2,
+      "grossProfitMargin": 68.3,
+      "notes": "Reunión ejecutiva"
+    },
+    {
+      "id": "sale_098",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00098",
+      "date": "2026-11-05T22:00:33.800Z",
+      "userId": "usr_02",
+      "userName": "Valeria Guardia",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_02",
+          "productName": "Capuchino",
+          "productSku": "P002",
+          "quantity": 3,
+          "unitSellingPrice": 3,
+          "unitRecipeCostSnapshot": 0.95,
+          "total": 9,
+          "totalRecipeCost": 2.85,
+          "grossProfit": 6.15
+        },
+        {
+          "productId": "prod_04",
+          "productName": "Croissant artesanal de mantequilla",
+          "productSku": "P004",
+          "quantity": 2,
+          "unitSellingPrice": 2.5,
+          "unitRecipeCostSnapshot": 0.71,
+          "total": 5,
+          "totalRecipeCost": 1.42,
+          "grossProfit": 3.58
+        }
+      ],
+      "totalQuantity": 5,
+      "totalSale": 14,
+      "totalRecipeCost": 4.27,
+      "grossProfit": 9.73,
+      "grossProfitMargin": 69.5
+    },
+    {
+      "id": "sale_099",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00099",
+      "date": "2026-11-05T19:00:33.800Z",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_01",
+          "productName": "Café americano",
+          "productSku": "P001",
+          "quantity": 4,
+          "unitSellingPrice": 2,
+          "unitRecipeCostSnapshot": 0.63,
+          "total": 8,
+          "totalRecipeCost": 2.52,
+          "grossProfit": 5.48
+        },
+        {
+          "productId": "prod_05",
+          "productName": "Espresso doble",
+          "productSku": "P005",
+          "quantity": 2,
+          "unitSellingPrice": 1.75,
+          "unitRecipeCostSnapshot": 0.62,
+          "total": 3.5,
+          "totalRecipeCost": 1.24,
+          "grossProfit": 2.26
+        }
+      ],
+      "totalQuantity": 6,
+      "totalSale": 11.5,
+      "totalRecipeCost": 3.76,
+      "grossProfit": 7.74,
+      "grossProfitMargin": 67.3
+    },
+    {
+      "id": "sale_090",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00090",
+      "date": "2026-11-04T00:00:33.800Z",
+      "userId": "usr_02",
+      "userName": "Valeria Guardia",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_02",
+          "productName": "Capuchino",
+          "productSku": "P002",
+          "quantity": 5,
+          "unitSellingPrice": 3,
+          "unitRecipeCostSnapshot": 0.95,
+          "total": 15,
+          "totalRecipeCost": 4.75,
+          "grossProfit": 10.25
+        },
+        {
+          "productId": "prod_03",
+          "productName": "Chocolate caliente",
+          "productSku": "P003",
+          "quantity": 2,
+          "unitSellingPrice": 2.75,
+          "unitRecipeCostSnapshot": 1.77,
+          "total": 5.5,
+          "totalRecipeCost": 3.54,
+          "grossProfit": 1.96
+        }
+      ],
+      "totalQuantity": 7,
+      "totalSale": 20.5,
+      "totalRecipeCost": 8.29,
+      "grossProfit": 12.21,
+      "grossProfitMargin": 59.6
+    },
+    {
+      "id": "sale_091",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00091",
+      "date": "2026-11-02T21:00:33.800Z",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_04",
+          "productName": "Croissant artesanal de mantequilla",
+          "productSku": "P004",
+          "quantity": 6,
+          "unitSellingPrice": 2.5,
+          "unitRecipeCostSnapshot": 0.71,
+          "total": 15,
+          "totalRecipeCost": 4.26,
+          "grossProfit": 10.74
+        },
+        {
+          "productId": "prod_01",
+          "productName": "Café americano",
+          "productSku": "P001",
+          "quantity": 6,
+          "unitSellingPrice": 2,
+          "unitRecipeCostSnapshot": 0.63,
+          "total": 12,
+          "totalRecipeCost": 3.78,
+          "grossProfit": 8.22
+        }
+      ],
+      "totalQuantity": 12,
+      "totalSale": 27,
+      "totalRecipeCost": 8.04,
+      "grossProfit": 18.96,
+      "grossProfitMargin": 70.2
+    },
+    {
+      "id": "sale_080",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00080",
+      "date": "2026-10-27T23:00:33.800Z",
+      "userId": "usr_02",
+      "userName": "Valeria Guardia",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_02",
+          "productName": "Capuchino",
+          "productSku": "P002",
+          "quantity": 8,
+          "unitSellingPrice": 3,
+          "unitRecipeCostSnapshot": 0.95,
+          "total": 24,
+          "totalRecipeCost": 7.6,
+          "grossProfit": 16.4
+        }
+      ],
+      "totalQuantity": 8,
+      "totalSale": 24,
+      "totalRecipeCost": 7.6,
+      "grossProfit": 16.4,
+      "grossProfitMargin": 68.3
+    },
+    {
+      "id": "sale_081",
+      "businessId": "biz_01",
+      "saleNumber": "VTA-00081",
+      "date": "2026-10-22T20:00:33.800Z",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod_01",
+          "productName": "Café americano",
+          "productSku": "P001",
+          "quantity": 10,
+          "unitSellingPrice": 2,
+          "unitRecipeCostSnapshot": 0.63,
+          "total": 20,
+          "totalRecipeCost": 6.3,
+          "grossProfit": 13.7
+        },
+        {
+          "productId": "prod_04",
+          "productName": "Croissant artesanal de mantequilla",
+          "productSku": "P004",
+          "quantity": 5,
+          "unitSellingPrice": 2.5,
+          "unitRecipeCostSnapshot": 0.71,
+          "total": 12.5,
+          "totalRecipeCost": 3.55,
+          "grossProfit": 8.95
+        }
+      ],
+      "totalQuantity": 15,
+      "totalSale": 32.5,
+      "totalRecipeCost": 9.85,
+      "grossProfit": 22.65,
+      "grossProfitMargin": 69.7
+    }
+  ],
+  "movements": [
+    {
+      "id": "mov_01",
+      "businessId": "biz_01",
+      "ingredientId": "ing_01",
+      "ingredientName": "Café en grano (Geisha & Typica)",
+      "unit": "g",
+      "movementType": "COMPRA",
+      "quantity": 5000,
+      "unitCost": 0.025,
+      "totalCost": 125,
+      "reason": "Compra a proveedor",
+      "reference": "FAC-L-4412",
+      "supplier": "Finca Lerida Boquete",
+      "notes": "Lote cosecha especial altura 1,650m",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "date": "2026-10-20T02:00:33.800Z"
+    },
+    {
+      "id": "mov_02",
+      "businessId": "biz_01",
+      "ingredientId": "ing_02",
+      "ingredientName": "Leche entera pasteurizada",
+      "unit": "ml",
+      "movementType": "COMPRA",
+      "quantity": 20000,
+      "unitCost": 0.0018,
+      "totalCost": 36,
+      "reason": "Compra a proveedor",
+      "reference": "FAC-EA-9821",
+      "supplier": "Estrella Azul Panamá",
+      "notes": "20 envases de 1 litro",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "date": "2026-10-31T02:00:33.800Z"
+    },
+    {
+      "id": "mov_03",
+      "businessId": "biz_01",
+      "ingredientId": "ing_04",
+      "ingredientName": "Vaso térmico compostable 12oz",
+      "unit": "unidad",
+      "movementType": "COMPRA",
+      "quantity": 500,
+      "unitCost": 0.12,
+      "totalCost": 60,
+      "reason": "Compra a proveedor",
+      "reference": "FAC-ECO-120",
+      "supplier": "EcoEmpaques Panamá",
+      "notes": "Caja sellada de 500 unidades",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "date": "2026-10-18T02:00:33.800Z"
+    },
+    {
+      "id": "mov_04",
+      "businessId": "biz_01",
+      "ingredientId": "ing_02",
+      "ingredientName": "Leche entera pasteurizada",
+      "unit": "ml",
+      "movementType": "MERMA",
+      "quantity": 900,
+      "unitCost": 0.0018,
+      "totalCost": 1.62,
+      "reason": "Derrame o desperdicio",
+      "notes": "Rotura accidental de jarra en barra matutina",
+      "userId": "usr_02",
+      "userName": "Valeria Guardia",
+      "date": "2026-11-04T22:00:33.800Z"
+    },
+    {
+      "id": "mov_05",
+      "businessId": "biz_01",
+      "ingredientId": "ing_06",
+      "ingredientName": "Chocolate en polvo 70% Cacao Bocas",
+      "unit": "g",
+      "movementType": "MERMA",
+      "quantity": 80,
+      "unitCost": 0.035,
+      "totalCost": 2.8,
+      "reason": "Producto dañado",
+      "notes": "Humedad en contenedor de almacenamiento secundario",
+      "userId": "usr_01",
+      "userName": "Carlos Mendoza",
+      "date": "2026-11-02T00:00:33.800Z"
+    },
+    {
+      "id": "mov_06",
+      "businessId": "biz_01",
+      "ingredientId": "ing_04",
+      "ingredientName": "Vaso térmico compostable 12oz",
+      "unit": "unidad",
+      "movementType": "MERMA",
+      "quantity": 15,
+      "unitCost": 0.12,
+      "totalCost": 1.8,
+      "reason": "Derrame o desperdicio",
+      "notes": "Vasos aplastados en desempaque",
+      "userId": "usr_02",
+      "userName": "Valeria Guardia",
+      "date": "2026-11-03T01:00:33.800Z"
+    }
+  ]
 }

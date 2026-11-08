@@ -11,14 +11,25 @@ import { ProductsView } from './components/products/ProductsView';
 import { InventoryView } from './components/inventory/InventoryView';
 import { SmartAIView } from './components/smartai/SmartAIView';
 import { SettingsView } from './components/settings/SettingsView';
+import { ProfileLoginView } from './components/auth/ProfileLoginView';
 import { MovementType, Sale } from './types';
 
 function MainLayout() {
-  const { activeTab } = useApp();
+  const { activeTab, isSessionActive } = useApp();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isNewSaleOpen, setIsNewSaleOpen] = useState(false);
   const [selectedSale, setSelectedSale] = useState<Sale | null>(null);
+
+  // Netflix-style Profile Selection Screen when session is not active
+  if (!isSessionActive) {
+    return (
+      <>
+        <ProfileLoginView />
+        <ToastContainer />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#FAFAFC] text-[#1D1D1F] flex">

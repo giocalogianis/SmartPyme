@@ -26,6 +26,7 @@ export const SettingsView: React.FC = () => {
     updateUser,
     addUser,
     deleteUser,
+    logoutSession,
     resetToDemoData,
     addToast,
   } = useApp();
@@ -254,14 +255,27 @@ export const SettingsView: React.FC = () => {
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={handleOpenCreateUser}
-            className="px-3.5 py-1.5 bg-[#0071E3] hover:bg-[#0077ED] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 shrink-0"
-          >
-            <Plus className="w-3.5 h-3.5" />
-            <span>Nuevo usuario</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={logoutSession}
+              className="px-3.5 py-1.5 bg-[#F5F5F7] hover:bg-[#E5E5EA] text-[#1D1D1F] border border-[#D6D6D6]/80 text-xs font-semibold rounded-xl transition-colors flex items-center gap-1.5 shrink-0"
+              title="Ir a la pantalla de selección de perfiles estilo Netflix"
+            >
+              <Users className="w-3.5 h-3.5 text-[#0071E3]" />
+              <span className="hidden sm:inline">Pantalla de inicio</span>
+              <span className="sm:hidden">Perfiles</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleOpenCreateUser}
+              className="px-3.5 py-1.5 bg-[#0071E3] hover:bg-[#0077ED] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 shrink-0"
+            >
+              <Plus className="w-3.5 h-3.5" />
+              <span>Nuevo usuario</span>
+            </button>
+          </div>
         </div>
 
         <div className="mt-5 space-y-3">

@@ -60,6 +60,11 @@ interface AppContextType {
   addUser: (userData: Omit<User, 'id'>) => User;
   deleteUser: (userId: string) => { success: boolean; error?: string };
 
+  // Netflix-style Session Authentication
+  isSessionActive: boolean;
+  loginAsUser: (userId: string) => void;
+  logoutSession: () => void;
+
   // Products
   products: Product[];
   addProduct: (product: Omit<Product, 'id' | 'createdAt' | 'updatedAt'>) => Product;
@@ -131,6 +136,7 @@ const STORAGE_KEYS = {
   BUSINESS: 'smartpyme_biz_v1',
   USERS: 'smartpyme_users_v1',
   CURRENT_USER_ID: 'smartpyme_curr_user_v1',
+  SESSION_ACTIVE: 'smartpyme_session_active_v1',
   PRODUCTS: 'smartpyme_products_v1',
   INGREDIENTS: 'smartpyme_ingredients_v1',
   RECIPES: 'smartpyme_recipes_v1',
@@ -141,6 +147,12 @@ const STORAGE_KEYS = {
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
+
+  // Netflix-style Session Authentication State
+  const [isSessionActive, setIsSessionActive] = useState<boolean>(() => {
+    const saved = localStorage.getItem(STORAGE_KEYS.SESSION_ACTIVE);
+    return saved === 'true';
+  });
 
   // Persistent States
   const [business, setBusiness] = useState<Business>(() => {
@@ -418,10 +430,30 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     return users.find((u) => u.id === currentUserId) || users[0];
   }, [users, currentUserId]);
 
+  const loginAsUser = (userId: string) => {
+    const found = users.find((u) => u.id === userId);
+    if (found) {
+      setCurrentUserId(userId);
+      setIsSessionActive(true);
+      localStorage.setItem(STORAGE_KEYS.CURRENT_USER_ID, userId);
+      localStorage.setItem(STORAGE_KEYS.SESSION_ACTIVE, 'true');
+      addToast('success', `¡Hola, ${found.name}!`, `Sesión iniciada como ${found.role === 'admin' ? 'Administrador' : 'Empleado'}.`);
+    }
+  };
+
+  const logoutSession = () => {
+    setIsSessionActive(false);
+    localStorage.removeItem(STORAGE_KEYS.SESSION_ACTIVE);
+    addToast('info', 'Sesión cerrada', 'Selecciona un perfil para continuar.');
+  };
+
   const switchUser = (userId: string) => {
     const found = users.find((u) => u.id === userId);
     if (found) {
       setCurrentUserId(userId);
+      setIsSessionActive(true);
+      localStorage.setItem(STORAGE_KEYS.CURRENT_USER_ID, userId);
+      localStorage.setItem(STORAGE_KEYS.SESSION_ACTIVE, 'true');
       addToast('info', 'Sesión cambiada', `Ahora estás operando como ${found.name} (${found.role === 'admin' ? 'Administrador' : 'Empleado'})`);
     }
   };
@@ -1226,12 +1258,14 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     localStorage.removeItem(STORAGE_KEYS.RECIPES);
     localStorage.removeItem(STORAGE_KEYS.SALES);
     localStorage.removeItem(STORAGE_KEYS.MOVEMENTS);
+    localStorage.removeItem(STORAGE_KEYS.SESSION_ACTIVE);
 
     fetch('/api/data/reset', { method: 'POST' }).catch(() => {});
 
     setBusiness(INITIAL_BUSINESS);
     setUsers(INITIAL_USERS);
     setCurrentUserId(INITIAL_USERS[0].id);
+    setIsSessionActive(false);
     setProducts(INITIAL_PRODUCTS);
     setIngredients(INITIAL_INGREDIENTS);
     setRecipes(INITIAL_RECIPES);
@@ -1257,6 +1291,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         updateUser,
         addUser,
         deleteUser,
+        isSessionActive,
+        loginAsUser,
+        logoutSession,
         products,
         addProduct,
         updateProduct,

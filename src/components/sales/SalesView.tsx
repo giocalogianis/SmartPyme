@@ -20,7 +20,7 @@ interface SalesViewProps {
 }
 
 export const SalesView: React.FC<SalesViewProps> = ({ onOpenNewSale, onSelectSale }) => {
-  const { filteredSales, addToast } = useApp();
+  const { filteredSales, dateFilter, setDateFilter, addToast } = useApp();
 
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'completed' | 'cancelled'>('all');
@@ -163,12 +163,57 @@ export const SalesView: React.FC<SalesViewProps> = ({ onOpenNewSale, onSelectSal
           />
         </div>
 
-        {/* Status Filters & Actions */}
+        {/* Period & Status Filters & Actions */}
         <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end flex-wrap">
+          {/* Period filter */}
+          <div className="flex items-center bg-[#F5F5F7] p-1 rounded-2xl border border-[#D6D6D6]/60 text-xs">
+            <button
+              onClick={() => setDateFilter('all')}
+              className={`px-2.5 py-1.5 rounded-xl font-medium transition-all ${
+                dateFilter === 'all'
+                  ? 'bg-white text-[#1D1D1F] shadow-xs'
+                  : 'text-[#707070] hover:text-[#1D1D1F]'
+              }`}
+            >
+              Todo
+            </button>
+            <button
+              onClick={() => setDateFilter('today')}
+              className={`px-2.5 py-1.5 rounded-xl font-medium transition-all ${
+                dateFilter === 'today'
+                  ? 'bg-white text-[#1D1D1F] shadow-xs'
+                  : 'text-[#707070] hover:text-[#1D1D1F]'
+              }`}
+            >
+              Hoy
+            </button>
+            <button
+              onClick={() => setDateFilter('last7days')}
+              className={`px-2.5 py-1.5 rounded-xl font-medium transition-all ${
+                dateFilter === 'last7days'
+                  ? 'bg-white text-[#1D1D1F] shadow-xs'
+                  : 'text-[#707070] hover:text-[#1D1D1F]'
+              }`}
+            >
+              7 días
+            </button>
+            <button
+              onClick={() => setDateFilter('thisMonth')}
+              className={`px-2.5 py-1.5 rounded-xl font-medium transition-all ${
+                dateFilter === 'thisMonth'
+                  ? 'bg-white text-[#1D1D1F] shadow-xs'
+                  : 'text-[#707070] hover:text-[#1D1D1F]'
+              }`}
+            >
+              Este mes
+            </button>
+          </div>
+
+          {/* Status filter */}
           <div className="flex items-center bg-[#F5F5F7] p-1 rounded-2xl border border-[#D6D6D6]/60 text-xs">
             <button
               onClick={() => setStatusFilter('all')}
-              className={`px-3 py-1.5 rounded-xl font-medium transition-all ${
+              className={`px-2.5 py-1.5 rounded-xl font-medium transition-all ${
                 statusFilter === 'all'
                   ? 'bg-white text-[#1D1D1F] shadow-xs'
                   : 'text-[#707070] hover:text-[#1D1D1F]'
@@ -178,7 +223,7 @@ export const SalesView: React.FC<SalesViewProps> = ({ onOpenNewSale, onSelectSal
             </button>
             <button
               onClick={() => setStatusFilter('completed')}
-              className={`px-3 py-1.5 rounded-xl font-medium transition-all ${
+              className={`px-2.5 py-1.5 rounded-xl font-medium transition-all ${
                 statusFilter === 'completed'
                   ? 'bg-white text-[#1D1D1F] shadow-xs'
                   : 'text-[#707070] hover:text-[#1D1D1F]'
@@ -188,7 +233,7 @@ export const SalesView: React.FC<SalesViewProps> = ({ onOpenNewSale, onSelectSal
             </button>
             <button
               onClick={() => setStatusFilter('cancelled')}
-              className={`px-3 py-1.5 rounded-xl font-medium transition-all ${
+              className={`px-2.5 py-1.5 rounded-xl font-medium transition-all ${
                 statusFilter === 'cancelled'
                   ? 'bg-white text-[#1D1D1F] shadow-xs'
                   : 'text-[#707070] hover:text-[#1D1D1F]'

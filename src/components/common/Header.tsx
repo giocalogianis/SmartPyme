@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Menu, Plus, ChevronDown, Check } from 'lucide-react';
+import { Menu, Plus, ChevronDown, Check, Users, LogOut } from 'lucide-react';
 import { DateFilterType } from '../../types';
 
 interface HeaderProps {
@@ -9,7 +9,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu, onOpenNewSale }) => {
-  const { activeTab, dateFilter, setDateFilter, users, currentUser, switchUser } = useApp();
+  const { activeTab, dateFilter, setDateFilter, users, currentUser, switchUser, logoutSession } = useApp();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const tabTitles: Record<string, string> = {
@@ -22,6 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu, onOpenNewSale 
   };
 
   const filterOptions: { id: DateFilterType; label: string }[] = [
+    { id: 'all', label: 'Todo' },
     { id: 'today', label: 'Hoy' },
     { id: 'last7days', label: '7 días' },
     { id: 'thisMonth', label: 'Este mes' },
@@ -113,6 +114,29 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu, onOpenNewSale 
                       {u.id === currentUser.id && <Check className="w-3.5 h-3.5 text-[#0071E3]" />}
                     </button>
                   ))}
+
+                  <div className="pt-2 mt-2 border-t border-[#E5E5EA]">
+                    <button
+                      onClick={() => {
+                        setIsUserMenuOpen(false);
+                        logoutSession();
+                      }}
+                      className="w-full flex items-center gap-2 p-2 rounded-xl text-left text-xs font-medium text-[#1D1D1F] hover:bg-[#F5F5F7] transition-colors"
+                    >
+                      <Users className="w-3.5 h-3.5 text-[#0071E3]" />
+                      <span>Cambiar de perfil (Pantalla de inicio)</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setIsUserMenuOpen(false);
+                        logoutSession();
+                      }}
+                      className="w-full flex items-center gap-2 p-2 rounded-xl text-left text-xs font-medium text-[#FF3B30] hover:bg-[#FF3B30]/10 transition-colors"
+                    >
+                      <LogOut className="w-3.5 h-3.5" />
+                      <span>Cerrar sesión</span>
+                    </button>
+                  </div>
                 </div>
               </>
             )}
